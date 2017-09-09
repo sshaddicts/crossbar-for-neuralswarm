@@ -1,0 +1,8 @@
+install:
+    docker build . -t sshaddicts/crossbar-for-neuralswarm;
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push sshaddicts/crossbar-for-neuralswarm;
+    fi
+
+notifications:
+  webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
