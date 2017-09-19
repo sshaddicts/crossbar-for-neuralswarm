@@ -66,14 +66,24 @@
           }
         },
         {
-          "type": "websocket",
+          "type": "web",
           "endpoint": {
             "type": "tcp",
             "port": 7778
           },
-          "auth": {
-            "anonymous": {
-              "type": "static",
+          "paths": {
+            "ws": {
+              "type": "websocket",
+              "auth": {
+                "anonymous": {
+                  "type": "static",
+                  "role": "user"
+                }
+              }
+            },
+            "call": {
+              "type": "caller",
+              "realm": "api",
               "role": "user"
             }
           }
